@@ -1,4 +1,4 @@
-package tests.pages;
+package pages;
 
 import com.github.javafaker.Faker;
 
@@ -16,12 +16,13 @@ public class StudentRegistrationFormPage {
             mobile = faker.phoneNumber().subscriberNumber(10),
             currentAddress = faker.address().fullAddress();
 
-    public void openPage() {
+    public StudentRegistrationFormPage openPage() {
         open("https://demoqa.com/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+        return this;
     }
 
-    public void fillForm(){
+    public StudentRegistrationFormPage fillForm(){
         $("#firstName").setValue(firstName);
         $("#lastName").setValue(lastName);
         $("#userEmail").setValue(email);
@@ -45,6 +46,7 @@ public class StudentRegistrationFormPage {
         $("#city").click();
         $("#react-select-4-input").setValue("Delhi").pressEnter();
         $("#submit").click();
+        return this;
     }
 
     public void checkData() {
