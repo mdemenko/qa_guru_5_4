@@ -65,3 +65,4 @@ public class StudentRegistrationFormPage {
         $$(".react-datepicker__day--001").first().click();
     }
 }
+
